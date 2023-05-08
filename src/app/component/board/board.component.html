@@ -1,0 +1,23 @@
+
+   
+ <input type="text" class="Input" placeholder = "  Search product ..."
+ matInput 
+ [formControl]="searchText" 
+> 
+
+<button (click)="all()">הכל</button>
+<button (click)="selectedCardc()">נבחרו</button>
+<button (click)="notSelect()">לא נבחרו</button>
+<div class="card-list">
+    <div *ngFor="let card of cards; let i = index" class="b" [class.selected]="card.isSelected" (click)="onCardClick(card)">
+        {{ card.inscription }}
+    </div>
+  </div>
+  <div class="selected-list">
+    <h3>Selected Cards:</h3>
+    <ul>
+      <li *ngFor="let card of selectedCards">{{ card.inscription }}</li>
+    </ul>
+  </div>
+  <div>שמות כוללים: {{namesCount}}</div> 
+  <div>שמות זהים: {{z}}</div>
